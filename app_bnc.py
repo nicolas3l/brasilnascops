@@ -10,7 +10,7 @@ with open('style.css') as f:
 
 arquivo = 'streamlit_final.csv'
 
-@st.cache_data
+st.cache_data
 def importar_csv(arquivo):
     data = pd.read_csv(arquivo, sep=';')
     return data
