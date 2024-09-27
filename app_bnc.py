@@ -10,12 +10,12 @@ with open('style.css') as f:
 
 arquivo = 'streamlit_final.csv'
 
-@st.cache_data
-def load_data(arquivo):
+@st.cache
+def importar_csv(arquivo):
     data = pd.read_csv(arquivo, sep=';')
     return data
 
-data = load_data(arquivo)
+data = importar_csv(arquivo)
 edicao = data['edicao'].sort_values().unique().tolist()
 col1, col2 = st.columns([1, 2], gap="large")
 
